@@ -15,61 +15,104 @@ namespace DepositoExamen
      */
     class Deposito
     {
-        //<param nvAgua = decimal >
-        //</param>
-        //<param nvlPienso = decimal >
-        //</param>
-        //<param cntdMxmAgua = decimal >
-        //</param>
-        //<param cntdMxmPienso = decimal >
-        //</param>
+        /*<sumary>
+            Cambios generales en espacios, tabulaciones y cambio del nombre de variables y funciones
+        </sumary>
+        <remarks>Se han cambiado todo el nombre a las variables comunes para toda la clase
+        </remarks>*/
+
+        /*<param name="nvlAgua" > Variable de tipo decimal que nos dice el nivel de agua
+        </param>
+        <param name="nvlPienso" > Variable de tipo decimal que nos dice el nivel de pienso
+        </param>
+        <param name="cntdMxmAgua" > Variable de tipo decimal que nos dice el nivel maximo que podemos tener de agua
+        </param>
+        <param name="cntdMxmPienso" > Variable de tipo decimal que nos dice el nivel maximo que podemos tener de pienso
+        </param>*/
+            
         private decimal nvlAgua;
         private decimal nvlPienso;
         private decimal cntdMxmAgua;
         private decimal cntdMxmPienso;
 
-        public decimal vlAgua
+
+        public decimal NvlAgua
         {
             get { return nvlAgua; }
         }
-        public decimal Niveldepienso
+
+        public decimal NvlPienso
         {
-            get { return niveldepienso; }
+            get { return nvlPienso; }
         }
-        public void reponer1(decimal cantidadareponerdeagua)
+
+
+        /*
+        <metod>
+            Las dos siguientes funciones, coimprueban que no sobrepasa el maximo de capacidad en el caso de agua de 10000 l y 
+            en el de pienso de 5000 kg y comprueba que contenga algo , 
+             si es asi, permite reponer
+        </metod>
+        */
+
+        public void ReponerAgua(decimal cntdRepAgua)
         {
-            cantidadmaxima=antidadareponerdeagua+nvlAgua;
-            if (cantidadareponerdeagua > 0 && cantidadmaxima < 10000);  //Tamaño del depósito de pienso es de 1000 l.
-            nvlAgua=nvlAgua+cantidadareponerdeagua;
-              
+            cntdMxmAgua = cntdRepAgua + nvlAgua;
 
-
-
+            if (ctdRepAgua > 0 && cntdMxmAgua < 10000);  //<param name="cntdMxmAgua"> Maximo pienso permitido es de 1000 l </param> 
+            {
+                nvlAgua = nvlAgua + cntdRepAgua;
+            }
         }
-        public void reponer2(decimal cantidadareponerdepienso)
+
+
+        public void ReponerPienso(decimal cntdRepPienso)
         {
+            cntdMxmPienso = cntdRPienso + nvlPienso;
 
-            cantidadmaxima2=cantidadareponerdepienso+niveldepienso;
-            if (cantidadareponerdepienso > 0 && cantidadmaxima2 < 5000)  //Tamaño del depósito de pienso es de 5000 kg. 
-            niveldepienso=niveldepienso+cantidadareponerdepienso;        }
-
-
-        public decimal consumo1(decimal cantidadaretirardeagua)
-        {
-            decimal retirado1 = 0; //Cantidad que se retira
-            if (cantidadaretirardeagua > 0 && cantidadaretirardeagua <= nvlAgua)
-            {   retirado1=cantidadaretirardeagua;
-            nvlAgua=nvlAgua-cantidadaretirardeagua;}
-
-            return retirado1;
+            if (cntdRPienso > 0 && cntdMxmPienso < 5000)  //<param name="cntdMxmPienso"> Maximo pienso permitido es de 5000 kg </param> 
+            {
+                nvlPienso = nvlPienso + cntdRPienso;        
+            }
         }
-        public decimal consumo2(decimal cantidadaretirardepienso)
+
+
+        /*
+        <returns> 
+            Devuelve la cantidad que ha sido consumida de agua
+        </returns>
+        */
+
+        public decimal ConsumoAgua(decimal cntdRetAgua)
         {
-            decimal retirado2=0; //Cantidad que se retira
-            if (cantidadaretirardepienso > 0 && cantidadaretirardepienso <= niveldepienso)
-            {   retirado2=cantidadaretirardepienso;
-                niveldepienso=niveldepienso-cantidadaretirardepienso;}
-            return retirado2;
+            decimal cntRetirarA = 0; //<param name="cntRetirarA">Cantidad de agua que se retira </param>
+
+            if (cntdRetAgua > 0 && cntdRetAgua <= nvlAgua)
+            {   
+                cntRetirarA = cntdRetAgua;
+                nvlAgua = nvlAgua - cntdRetAgua;
+            }
+
+            return cntRetirarA;
+        }
+
+
+        /*
+        <returns> 
+            Devuelve la cantidad que ha sido consumida de pienso
+        </returns>
+        */
+
+        public decimal ConsumoPienso(decimal cntdRetPienso)
+        {
+            decimal cntRetirarP = 0; //<param name="cntRetirarP">Cantidad de pienso que se retira </param>
+
+            if (cntdRetPienso > 0 && cntdRetPienso <= nvlPienso)
+            {   
+                cntRetirarP = cntdRetPienso;
+                nvlPienso = nvlPienso - cntdRetPienso;
+            }
+            return cntRetirarP;
         }
 
 
