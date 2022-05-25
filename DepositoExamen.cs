@@ -8,13 +8,17 @@ using System;
 namespace DepositoExamen
 {
     
-    class Deposito
+    class DepositoExamen
     {
         /*<sumary>
             Cambios generales en espacios, tabulaciones y cambio del nombre de variables y funciones
         </sumary>
         <remarks>Se han cambiado todo el nombre a las variables comunes para toda la clase
-        </remarks>*/
+        </remarks>
+        <exception>
+            Encaso de sobrepasar 5000kg en el pineso y de 10000l en agua, debiaria informar de un error no programado,
+            para indicarlo y saber que no se puede hacer
+        </exception>*/
 
         /*<param name="nvlAgua" > Variable de tipo decimal que nos dice el nivel de agua
         </param>
