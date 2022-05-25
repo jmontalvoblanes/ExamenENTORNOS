@@ -7,12 +7,7 @@ using System;
 
 namespace DepositoExamen
 {
-    /*Clase que representa la gestión de los depósitos de una granja.
-     * Tiene dos depósitos: pienso y agua. 
-     * La propiedad devuelve el nivel de agua y pienso. 
-     * Los métodos permiten reponer o consumir tanto pienso como agua.
-     * Estos comentarios se deben eliminar y usar comentarios de documentación en su lugar.
-     */
+    
     class Deposito
     {
         /*<sumary>
@@ -77,7 +72,9 @@ namespace DepositoExamen
         }
 
 
-        /*
+        /*<sumary>
+            Funcion que calcula el consumo de agua 
+        </sumary>
         <returns> 
             Devuelve la cantidad que ha sido consumida de agua
         </returns>
@@ -98,6 +95,9 @@ namespace DepositoExamen
 
 
         /*
+        <sumary>
+            Funcion que calcula el consumo de agua 
+        </sumary>
         <returns> 
             Devuelve la cantidad que ha sido consumida de pienso
         </returns>
@@ -114,13 +114,6 @@ namespace DepositoExamen
             }
             return cntRetirarP;
         }
-
-
-
-
-
-
-
 
     }
 }
